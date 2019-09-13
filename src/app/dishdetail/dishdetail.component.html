@@ -6,8 +6,22 @@
     fxLayoutGap="10px"
     fxLayoutGap.x="0">
 
-    <div fxFlex="40">
-      <p>First Part</p>
+    <div fxFlex="40" *ngIf="selected">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>{{selected.name | uppercase}}</h3> 
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src={{selected.img}} alt={{selected.name}}>
+        <mat-card-content>
+          <p>{{selected.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-card-button>LIKE</button> 
+          <button mat-card-button>SHARED</button>
+        </mat-card-actions>
+      </mat-card>
     </div>
 
     <div fxFlex="40">
