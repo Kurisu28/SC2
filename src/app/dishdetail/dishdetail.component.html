@@ -6,16 +6,16 @@
     fxLayoutGap="10px"
     fxLayoutGap.x="0">
 
-    <div fxFlex="40" *ngIf="selected">
+    <div fxFlex="40" >
       <mat-card>
         <mat-card-header>
           <mat-card-title>
-            <h3>{{selected.name | uppercase}}</h3> 
+            <h3>{{dishdetail.name | uppercase}}</h3> 
           </mat-card-title>
         </mat-card-header>
-        <img mat-card-image src='{{selected.image}}' alt={{selected.name}}>
+        <img mat-card-image src='{{dishdetail.image}}' alt={{dishdetail.name}}>
         <mat-card-content>
-          <p>{{selected.description}}</p>
+          <p>{{dishdetail.description}}</p>
         </mat-card-content>
         <mat-card-actions>
           <button mat-card-button>LIKE</button> 
@@ -25,7 +25,7 @@
     </div>
     
     <div fxFlex="40"  fxLayout="column">
-      <mat-card *ngFor="let des of descomment">
+      <mat-card *ngFor="let des of dishdetail.comment">
         <mat-card-header>
           <mat-card-title>
             <h4>{{des.comment | uppercase}}</h4> 
@@ -39,16 +39,4 @@
       </mat-card>  
     </div>
 </div>
-
-<!--<div fxFlex="40"  fxLayout="column" fxLayout="30px">
-      <mat-list fxFlex >
-        <mat-list-item *ngFor="let des of descomment">
-          <h3 matLine> {{des.comment}} </h3>
-          <p matLine> 
-              {{des.rate}} Stars <br />
-              ------{{des.author}} {{des.date | date:"fullDate"}}
-          </p>
-        </mat-list-item>
-      </mat-list>
-    </div>
-  -->
+<!---*ngIf="dishdetail"-->
