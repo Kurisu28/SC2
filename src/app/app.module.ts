@@ -18,12 +18,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 import { DishService } from './services/dish.service';
+import { PromotionserviceService } from './services/promotionservice.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { RoutingModule } from './routing/routing.module';
+import { _appIdRandomProviderFactory } from '@angular/core/src/application_tokens';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { RoutingModule } from './routing/routing.module';
     RoutingModule,
     MatCardModule
   ],
-  providers: [DishService],
+  providers: [DishService, PromotionserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
