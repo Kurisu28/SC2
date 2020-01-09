@@ -18,10 +18,11 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.dishes = this.dishService.getAlldish();
-    this.selectedDish = this.dishes[0];
+    // 用inject方式处理时需要对selectedDish进行赋值this.selectedDish = this.dishes[0];
   }
 
+  /*inject方式处理的函数
   onClick (dish: Dish) {
     this.selectedDish = dish;
-  }
+  }*/
 }

@@ -10,7 +10,7 @@
 
   <div fxFlex>
     <mat-grid-list cols="2" rowHeight="200px">
-      <mat-grid-tile *ngFor="let dish of dishes" (click) = "onClick(dish)">
+      <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]"> <!-- inject的方式用于控制点击操作的函数(click) = "onClick(dish)"-->
         <img height="200px" src={{dish.image}} alt={{dish.name}}>
         <mat-grid-tile-footer>
           <h1>{{dish.name | uppercase}}</h1>
@@ -20,7 +20,8 @@
   </div>   
 </div>  
 
-<app-dishdetail [dishdetail] = "selectedDish"></app-dishdetail>
+<!-- 这是用inject的方式将变量从一个component传递到另一个component。 code实际使用的方式是通过url（router）来传递信息
+  <app-dishdetail [dishdetail] = "selectedDish"></app-dishdetail>-->
 
 
 
