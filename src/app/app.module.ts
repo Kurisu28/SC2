@@ -18,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 import { DishService } from './services/dish.service';
+import { LeaderService } from './services/leader.service';
 import { PromotionserviceService } from './services/promotionservice.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -49,7 +50,7 @@ import { _appIdRandomProviderFactory } from '@angular/core/src/application_token
     RoutingModule,
     MatCardModule
   ],
-  providers: [DishService, PromotionserviceService],
+  providers: [DishService, PromotionserviceService, LeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
