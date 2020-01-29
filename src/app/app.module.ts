@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -27,6 +28,12 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { RoutingModule } from './routing/routing.module';
 import { _appIdRandomProviderFactory } from '@angular/core/src/application_tokens';
+import { LoginComponent } from './login/login.component';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
@@ -37,7 +44,8 @@ import { _appIdRandomProviderFactory } from '@angular/core/src/application_token
     FooterComponent,
     HomeComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -48,9 +56,17 @@ import { _appIdRandomProviderFactory } from '@angular/core/src/application_token
     MatGridListModule,
     MatButtonModule,
     RoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatFormFieldModule, 
+    MatInputModule,
+    MatCheckboxModule,
+    FormsModule
   ],
   providers: [DishService, PromotionserviceService, LeaderService],
+  entryComponents: [
+    LoginComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
