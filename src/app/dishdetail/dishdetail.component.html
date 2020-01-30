@@ -6,12 +6,38 @@
     fxLayoutGap="10px"
     fxLayoutGap.x="0">
 
-    <div fxFlex="40">
-      <p>First Part</p>
+    <div fxFlex="40" >
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>{{dishdetail.name | uppercase}}</h3> 
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src='{{dishdetail.image}}' alt={{dishdetail.name}}>
+        <mat-card-content>
+          <p>{{dishdetail.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-card-button>LIKE</button> 
+          <button mat-card-button (click) = "goBack()">BACK</button> 
+          <button mat-card-button>SHARED</button>
+        </mat-card-actions>
+      </mat-card>
     </div>
-
-    <div fxFlex="40">
-      <p>Second Part</p>
+    
+    <div fxFlex="40"  fxLayout="column">
+      <mat-card *ngFor="let des of dishdetail.comment">
+        <mat-card-header>
+          <mat-card-title>
+            <h4>{{des.comment | uppercase}}</h4> 
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p> {{des.rate}} Stars <br />
+              ------{{des.author}} {{des.date | date:"fullDate"}}
+          </p>
+        </mat-card-content>
+      </mat-card>  
     </div>
-
 </div>
+<!---*ngIf="dishdetail"-->
