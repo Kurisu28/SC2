@@ -29,6 +29,9 @@ import { AboutComponent } from './about/about.component';
 import { RoutingModule } from './routing/routing.module';
 import { _appIdRandomProviderFactory } from '@angular/core/src/application_tokens';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms'; 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select'; 
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -61,7 +64,10 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule, 
     MatInputModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule
   ],
   providers: [DishService, PromotionserviceService, LeaderService],
   entryComponents: [
